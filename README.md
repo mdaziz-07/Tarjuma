@@ -72,7 +72,7 @@ Featuring world-renowned reciters, ambient background soundscapes, daily Tadabbu
 ## 📄 License
 
 This project is licensed under the **GNU General Public License v3.0** (GPL-3.0).  
-See the [LICENSE.txt](LICENSE.txt) file for full license terms and conditions.
+See the [LICENSE](LICENSE) file for full license terms and conditions.
 
 ---
 
