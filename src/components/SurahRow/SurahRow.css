@@ -1,0 +1,89 @@
+.surah-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+  min-width: 280px;
+}
+
+.surah-row:active {
+  opacity: 0.7;
+}
+
+.surah-row + .surah-row {
+  border-top: 1px solid var(--color-mid-grey);
+}
+
+.surah-row-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.surah-row-primary {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.surah-name {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.surah-arabic-inline {
+  font-family: var(--font-arabic);
+  font-size: var(--arabic-inline-size, var(--text-sm));
+  color: var(--color-white);
+  opacity: 0.85;
+  transition: font-size var(--transition-fast) ease;
+}
+
+.surah-meaning {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  display: block;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.surah-row-menu {
+  padding: var(--space-sm);
+  min-width: 36px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background var(--transition-fast);
+}
+
+.surah-row-menu:active {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Compact variant */
+.surah-row.compact {
+  padding: var(--space-sm) 0;
+  min-width: 240px;
+}
+
+.surah-row.compact .surah-badge {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  font-size: 0.875rem;
+}
+
+.surah-row.compact .surah-name {
+  font-size: var(--text-sm);
+}
+
+.surah-row.compact .surah-meaning {
+  font-size: var(--text-xs);
+}

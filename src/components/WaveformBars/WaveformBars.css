@@ -1,0 +1,42 @@
+.waveform-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 24px;
+}
+
+.waveform-bar {
+  width: 3px;
+  height: 100%;
+  border-radius: 1.5px;
+  transform-origin: bottom;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+.bar-1 { animation: waveform-bar-1 0.8s ease-in-out infinite; }
+.bar-2 { animation: waveform-bar-2 0.7s ease-in-out infinite 0.1s; }
+.bar-3 { animation: waveform-bar-3 0.9s ease-in-out infinite 0.2s; }
+
+/* Sizes */
+.waveform-small {
+  height: 16px;
+  gap: 2px;
+}
+.waveform-small .waveform-bar {
+  width: 2px;
+}
+
+.waveform-medium {
+  height: 24px;
+  gap: 3px;
+}
+
+.waveform-large {
+  height: 32px;
+  gap: 4px;
+}
+.waveform-large .waveform-bar {
+  width: 4px;
+}

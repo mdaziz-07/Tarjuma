@@ -1,0 +1,83 @@
+================================================================================
+                              TERMS OF SERVICE
+                             TARJUMA QURAN APP
+================================================================================
+Last Updated: August 21, 2026
+Contact: tarjumaapp@proton.me
+Website: https://tarjumaapp.vercel.app
+
+1. ACCEPTANCE OF TERMS
+-----------------------
+Welcome to Tarjuma ("the App", "we", "us", or "our"). By downloading, installing, 
+accessing, or using the Tarjuma mobile or web application, you agree to be bound 
+by these Terms of Service ("Terms"). If you do not agree to these Terms, please do 
+not use the App.
+
+2. PURPOSE AND NATURE OF SERVICE
+---------------------------------
+Tarjuma is an ad-free, spiritually focused Islamic audio application designed to 
+facilitate listening, understanding, and reflecting upon the Holy Quran. 
+
+The App offers:
+- High-quality Arabic recitations from world-renowned scholars and reciters.
+- Urdu and Hindi audio translations (translation by Fateh Muhammed Jalandhary).
+- Five distinctive listening modes (Surah-wise Arabic, Para-wise Arabic & Translation, 
+  Para-wise Translation Only, Surah-wise Arabic & Translation, Surah-wise Translation Only).
+- Curated and personalized mixes ("Made For You").
+- Ambient natural background sounds (Rain, Birds, Waves, Crickets, Fire, Owl) for focus and meditation.
+- Offline audio downloads for listening without an internet connection.
+- Listening streak and daily goal tracking.
+- Custom user playlists and bookmarks.
+- Anonymous cloud synchronization via a unique Sync Key.
+
+3. SACRED CONTENT AND USER CONDUCT
+-----------------------------------
+The Holy Quran contains sacred religious scripture. Users agree to:
+- Treat all Quranic audio, Arabic text, and translations with dignity, respect, and reverence.
+- Use the application strictly for lawful, personal, spiritual, and non-commercial educational purposes.
+- Refrain from modifying, tampering with, or redistributing audio files in any manner that alters the divine meaning or text of the Holy Quran.
+- Not attempt to decompile, reverse-engineer, bulk scrape, or extract application assets for commercial resale.
+
+4. CONTENT ATTRIBUTION AND LICENSING
+-------------------------------------
+- Arabic Audio Recitations: Sourced from verified public Islamic audio archives (including MP3Quran and QuranicAudio) featuring licensed recitations from Shaykh Mishary Rashid Alafasy, Shaykh Yasser Al-Dosari, Shaykh Abdul Rahman Al-Sudais, Shaykh Maher Al-Muaiqly, Shaykh Hazza Al-Balushi, Shaykh Yergen Kumarov, Shaykh Sa'ud ash-Shuraim, Shaykh Abu Bakr Al-Shatri, and Shaykh Abdul Basit Abdul Samad.
+- Urdu & Hindi Translation Audio: Based on the authentic translation of Mawlana Fateh Muhammed Jalandhary.
+- Ambient Background Sounds: Curated royalty-free high-fidelity soundscapes.
+
+All rights to third-party recitations remain the property of their respective creators and copyright holders.
+
+5. OFFLINE DOWNLOADS & LOCAL STORAGE
+-------------------------------------
+- Tarjuma provides functionality allowing you to download audio files directly to your device storage (IndexedDB) for offline playback.
+- These offline audio files are intended solely for personal, in-app offline listening.
+- You may delete offline files at any time through the Downloads tab in the Library screen or the Player screen.
+
+6. DATA SYNC, BACKUPS & SYNC KEYS
+----------------------------------
+- Tarjuma respects your privacy and operates primarily on-device without mandatory registration or passwords.
+- If you choose to enable cloud synchronization, the App generates a unique, anonymous Sync Key (format: TRJM-XXXX-YYYY) linked to your preferences, bookmarks, streaks, and playlist data.
+- You are solely responsible for saving and maintaining your Sync Key. If you lose your Sync Key, lost preferences or playlists cannot be recovered.
+
+7. IN-APP FEEDBACK AND SUGGESTIONS
+-----------------------------------
+When you send bug reports, reciter requests, or feature feedback to tarjumaapp@proton.me, you grant us the right to use and implement your suggestions to improve the application without any obligation or financial compensation.
+
+8. DISCLAIMER OF WARRANTIES
+----------------------------
+THE APPLICATION IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS, WITHOUT EXPRESS OR IMPLIED WARRANTIES OF ANY KIND, INCLUDING BUT NOT LIMITED TO UNINTERRUPTED AVAILABILITY, ACCURACY OF THIRD-PARTY NETWORK AUDIO STREAMS, OR COMPATIBILITY WITH ALL HARDWARE PLATFORMS.
+
+WHILE WE ENDEAVOR TO MAINTAIN 100% CORRECTNESS IN ALL QURANIC METADATA, VERSES, AND TIMINGS, HUMAN OR TECHNICAL ERRORS MAY OCCUR. IF YOU NOTICE ANY DISCREPANCY, PLEASE NOTIFY US IMMEDIATELY AT tarjumaapp@proton.me SO WE CAN EXPEDITIOUSLY RECTIFY IT.
+
+9. LIMITATION OF LIABILITY
+---------------------------
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE CREATORS, DEVELOPERS, AND MAINTAINERS OF TARJUMA SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF OR INABILITY TO USE THE SERVICE.
+
+10. MODIFICATIONS TO TERMS
+---------------------------
+We reserve the right to revise or update these Terms of Service at any time. Any changes will be posted within the application and reflected by the "Last Updated" date. Continued use of Tarjuma following any modifications constitutes your acceptance of the updated Terms.
+
+11. CONTACT US
+---------------
+If you have questions, feedback, or concerns regarding these Terms of Service, please contact us at:
+Email: tarjumaapp@proton.me
+================================================================================

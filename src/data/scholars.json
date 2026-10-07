@@ -1,0 +1,105 @@
+[
+  {
+    "id": "scholar-1",
+    "name_arabic": "ياسر الدوسري",
+    "name_transliteration": "Yasser Al-Dosari",
+    "bio": "Imam of the Grand Mosque in Makkah, known for his deeply emotional and melodious recitation style.",
+    "recording_type": "FULL_QURAN",
+    "photo_url": "/assets/scholars/YaseerAlDosari.webp",
+    "available_surah_ids": []
+  },
+  {
+    "id": "scholar-2",
+    "name_arabic": "مشاري راشد العفاسي",
+    "name_transliteration": "Mishary Rashid Alafasy",
+    "bio": "Kuwaiti Quran reciter, renowned worldwide for his beautiful and clear recitation.",
+    "recording_type": "FULL_QURAN",
+    "photo_url": "/assets/scholars/MisharyRashidAlafasy.webp",
+    "available_surah_ids": []
+  },
+  {
+    "id": "scholar-3",
+    "name_arabic": "عبدالرحمن السديس",
+    "name_transliteration": "Abdul Rahman Al-Sudais",
+    "bio": "President of the General Presidency for the Affairs of the Two Holy Mosques and Imam of the Grand Mosque.",
+    "recording_type": "FULL_QURAN",
+    "photo_url": "/assets/scholars/AbdulRahmanAlSudais.webp",
+    "available_surah_ids": []
+  },
+  {
+    "id": "scholar-4",
+    "name_arabic": "ماهر المعيقلي",
+    "name_transliteration": "Maher Al-Muaiqly",
+    "bio": "Imam at the Grand Mosque in Makkah, celebrated for his powerful and soothing voice.",
+    "recording_type": "FULL_QURAN",
+    "photo_url": "/assets/scholars/MaherAlMuaiqly.webp",
+    "available_surah_ids": []
+  },
+  {
+    "id": "scholar-5",
+    "name_arabic": "هزاع البلوشي",
+    "name_transliteration": "Hazza Al-Balushi",
+    "bio": "Emirati reciter known for his unique and soul-stirring recitation that moves listeners deeply.",
+    "recording_type": "FULL_QURAN",
+    "photo_url": "/assets/scholars/HazzaAlBalushi.webp",
+    "available_surah_ids": []
+  },
+  {
+    "id": "scholar-6",
+    "name_arabic": "يرغن كوماروف",
+    "name_transliteration": "Yergen Kumarov",
+    "bio": "Kazakh reciter gaining global recognition for his distinct and heartfelt recitation of selected Surahs.",
+    "recording_type": "SELECTED_SURAHS",
+    "photo_url": "/assets/scholars/YergenKumarov.webp",
+    "available_surah_ids": [
+      1,
+      2,
+      3,
+      18,
+      36,
+      55,
+      56,
+      67,
+      78,
+      112,
+      113,
+      114
+    ]
+  },
+  {
+    "id": "scholar-jalandhary",
+    "name_arabic": "فتح محمد جالندھري",
+    "name_transliteration": "Fateh Muhammed Jalandhary",
+    "bio": "Renowned Urdu translator of the Quran, famous for his clear and accurate Urdu translation.",
+    "recording_type": "TRANSLATION_ONLY",
+    "photo_url": "/assets/scholars/FatehMuhammedJalandhary.webp",
+    "available_surah_ids": []
+  },
+  {
+    "id": "scholar-7",
+    "name_arabic": "سعود الشريم",
+    "name_transliteration": "Sa'ud ash-Shuraim",
+    "bio": "Former Imam of the Grand Mosque in Makkah, famed for his rhythmic and deeply resonant voice.",
+    "recording_type": "FULL_QURAN",
+    "photo_url": "/assets/scholars/Sa'udash-Shuraim.webp",
+    "available_surah_ids": []
+  },
+  {
+    "id": "scholar-8",
+    "name_arabic": "أبو بكر الشاطري",
+    "name_transliteration": "Abu Bakr Al-Shatri",
+    "bio": "Yemeni reciter and Imam, celebrated for his warm, smooth, and emotionally captivating tone.",
+    "recording_type": "FULL_QURAN",
+    "photo_url": "/assets/scholars/AbuBakrAl-Shatri.webp",
+    "available_surah_ids": []
+  },
+  {
+    "id": "scholar-9",
+    "name_arabic": "عبد الباسط عبد الصمد",
+    "name_transliteration": "AbdulBaset AbdulSamad",
+    "bio": "One of the most famous reciters in history, known for his incredible breath control and majestic style.",
+    "recording_type": "FULL_QURAN",
+    "photo_url": "/assets/scholars/AbdulBasetAbdulSamad.webp",
+    "available_surah_ids": []
+  }
+]

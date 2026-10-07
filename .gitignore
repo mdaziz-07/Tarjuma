@@ -1,0 +1,80 @@
+# ==============================================================================
+# Tarjuma — Git Ignore Rules
+# Protects secrets, build outputs, environment configs, and platform artifacts
+# ==============================================================================
+
+# Node / Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Production Build Outputs
+dist/
+dist-ssr/
+build/
+coverage/
+
+# Environment Variables & Secrets
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+
+# Android Native & Keystore Credentials
+android/.gradle/
+android/build/
+android/app/build/
+android/capacitor-cordova-android-plugins/build/
+android/local.properties
+android/gradle.properties
+!.android/gradle.properties.example
+android/app/google-services.json
+google-services.json
+*.jks
+*.keystore
+*.key
+*.pem
+*.p12
+
+# Android Build Outputs (APKs & Bundles)
+*.apk
+*.aab
+android/app/release/
+.cxx/
+captures/
+
+# Backend & Database (Seeds with admin credentials)
+supabase/
+
+# Logs & Temporary Files
+logs/
+*.log
+logcat.txt
+scratch/
+
+# Agent & Automation Tools
+.agents/
+.argent/
+goldie/out/
+
+# Editor & System Files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.vsix
+
+# Specifications & Private Documentation
+PRD.md

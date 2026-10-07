@@ -1,0 +1,72 @@
+[
+  {
+    "id": "none",
+    "url": "",
+    "name": "No sound",
+    "icon": "circle-off",
+    "isPreinstalled": true
+  },
+  {
+    "id": "rain",
+    "url": "/assets/sounds/rain.mp3",
+    "name": "Rain",
+    "icon": "cloud-rain",
+    "isPreinstalled": true
+  },
+  {
+    "id": "birds",
+    "url": "/assets/sounds/birds.mp3",
+    "name": "Birds",
+    "icon": "bird",
+    "isPreinstalled": true
+  },
+  {
+    "id": "fire",
+    "url": "/assets/sounds/fire.mp3",
+    "name": "Fire",
+    "icon": "flame",
+    "isPreinstalled": true
+  },
+  {
+    "id": "waves",
+    "url": "/assets/sounds/waves.mp3",
+    "name": "Waves",
+    "icon": "waves",
+    "isPreinstalled": true
+  },
+  {
+    "id": "crickets",
+    "url": "/assets/sounds/crickets.mp3",
+    "name": "Crickets",
+    "icon": "cricket",
+    "isPreinstalled": true
+  },
+  {
+    "id": "owl",
+    "url": "/assets/sounds/owl.mp3",
+    "name": "Owl",
+    "icon": "moon",
+    "isPreinstalled": true
+  },
+  {
+    "id": "beach",
+    "url": "https://pub-b64cd295d2a14b879e8858c441be6748.r2.dev/background_sounds/beach.mp3",
+    "name": "Beach",
+    "icon": "wave-cove",
+    "isPreinstalled": false
+  },
+  {
+    "id": "river",
+    "url": "https://pub-b64cd295d2a14b879e8858c441be6748.r2.dev/background_sounds/river.mp3",
+    "name": "River",
+    "icon": "droplets",
+    "isPreinstalled": false
+  },
+  {
+    "id": "thunder",
+    "url": "https://pub-b64cd295d2a14b879e8858c441be6748.r2.dev/background_sounds/thunder.mp3",
+    "name": "Thunder",
+    "icon": "cloud-lightning",
+    "isPreinstalled": false
+  }
+]

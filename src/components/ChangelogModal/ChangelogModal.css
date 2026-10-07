@@ -1,0 +1,256 @@
+/* Changelog Modal Styles */
+.changelog-modal-overlay {
+  animation: fade-in 0.2s ease-out;
+  z-index: 10000 !important;
+}
+
+.changelog-modal-content {
+  background: rgba(18, 18, 22, 0.98) !important;
+  backdrop-filter: blur(28px) !important;
+  -webkit-backdrop-filter: blur(28px) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: none !important;
+  border-radius: 28px 28px 0 0 !important;
+  max-width: 540px;
+  width: 100%;
+  margin: 0 auto;
+  /* Increased length so release notes and updates have generous room */
+  height: 94vh;
+  max-height: 94vh;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 -16px 48px rgba(0, 0, 0, 0.85) !important;
+  animation: sheet-slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (min-width: 768px) {
+  .changelog-modal-content {
+    border-radius: 24px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    height: 86vh;
+    max-height: 86vh;
+  }
+}
+
+@keyframes sheet-slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0.6;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.changelog-modal-body {
+  padding: 16px 22px calc(var(--safe-bottom, 16px) + 24px) 22px !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex: 1;
+  min-height: 0;
+}
+
+.changelog-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.changelog-badge-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.changelog-version-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.changelog-latest-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #FAFAFA;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+
+.changelog-date {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  color: #94a3b8;
+  margin-left: auto;
+}
+
+.changelog-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+  margin: 4px 0 0 0;
+}
+
+.changelog-summary {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #a1a1aa;
+  margin: 0;
+}
+
+/* Version switcher tabs */
+.changelog-version-switcher {
+  display: flex;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.changelog-version-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #a1a1aa;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.changelog-version-tab.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tab-latest-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #FAFAFA;
+}
+
+/* Section Cards */
+.changelog-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.changelog-section-card {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 14px 16px;
+  transition: background 0.2s ease;
+}
+
+.changelog-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.changelog-section-icon-wrap {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FAFAFA;
+}
+
+.changelog-section-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #f1f5f9;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.changelog-items-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.changelog-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #cbd5e1;
+}
+
+.changelog-bullet-dot {
+  width: 5px;
+  height: 5px;
+  min-width: 5px;
+  border-radius: 50%;
+  background: #A1A1AA;
+  margin-top: 7px;
+}
+
+/* Footer Confirm Button */
+.changelog-footer {
+  margin-top: 6px;
+}
+
+.changelog-confirm-btn {
+  width: 100%;
+  height: 44px;
+  background: #FAFAFA;
+  color: #09090B;
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.12);
+}
+
+.changelog-confirm-btn:hover {
+  background: #E4E4E7;
+}
+
+.changelog-confirm-btn:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}

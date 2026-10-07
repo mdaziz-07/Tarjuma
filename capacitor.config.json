@@ -1,0 +1,30 @@
+{
+  "appId": "com.tarjuma.app",
+  "appName": "Tarjuma",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "allowNavigation": [
+      "wcprerrxiscklakhtmax.supabase.co",
+      "api.alquran.cloud",
+      "api.qurancdn.com",
+      "download.quranicaudio.com",
+      "server11.mp3quran.net",
+      "res.cloudinary.com",
+      "fonts.googleapis.com",
+      "fonts.gstatic.com"
+    ]
+  },
+  "plugins": {
+    "StatusBar": {
+      "style": "DARK",
+      "backgroundColor": "#000000"
+    },
+    "CapacitorHttp": {
+      "enabled": true
+    },
+    "MediaSession": {
+      "foregroundService": "always"
+    }
+  }
+}

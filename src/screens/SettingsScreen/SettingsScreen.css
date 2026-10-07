@@ -1,0 +1,328 @@
+.settings-screen {
+  animation: fade-in var(--transition-base) ease-out;
+}
+
+.settings-group {
+  margin-bottom: var(--space-2xl);
+}
+
+.settings-group-title {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
+  padding-left: var(--space-xs);
+}
+
+.settings-card {
+  padding: 0 !important;
+}
+
+.settings-row-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px var(--space-lg);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  min-height: 48px;
+}
+
+.settings-row:active {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.settings-row-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  font-size: var(--text-base);
+  font-weight: 500;
+}
+
+.settings-row-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.settings-card .divider {
+  margin: 0 var(--space-lg);
+}
+
+/* Inline Accordion Dropdowns */
+.inline-settings-dropdown {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--glass-radius-sm);
+  margin: 2px var(--space-lg) var(--space-md);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+  animation: settings-slide-down 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes settings-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px var(--space-md);
+  border-radius: 8px;
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+
+.dropdown-option:active {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.dropdown-option.active {
+  color: var(--color-white);
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.check-icon {
+  font-weight: bold;
+  color: var(--color-white);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+/* Chevron Rotation Animation */
+.rotate-90 {
+  transform: rotate(90deg);
+  transition: transform var(--transition-base);
+}
+
+.settings-row .lucide-chevron-right {
+  transition: transform var(--transition-base);
+}
+
+/* ── Data Sync & Backup Styling ── */
+.sync-settings-panel {
+  padding: var(--space-lg) !important;
+  padding-bottom: var(--space-xl) !important;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  overflow: visible;
+}
+
+.sync-description {
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  line-height: 1.45;
+  margin-bottom: var(--space-xs);
+}
+
+/* Unique Backup Key Card */
+.sync-key-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 12px 16px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sync-key-label {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.05em;
+}
+
+.sync-key-display-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sync-key-value {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-white);
+  letter-spacing: 0.08em;
+}
+
+.sync-copy-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sync-copy-btn:active {
+  background: rgba(255, 255, 255, 0.12);
+  transform: scale(0.92);
+}
+
+.sync-key-hint {
+  font-size: 10px;
+  color: var(--color-muted);
+}
+
+.sync-generate-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: all var(--transition-fast);
+}
+
+.sync-generate-btn:active {
+  transform: scale(0.97);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sync-generate-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Sync Restore Panel */
+.sync-restore-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sync-restore-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.sync-restore-input-row {
+  display: flex;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.sync-restore-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid var(--glass-border-light) !important;
+  border-radius: 10px !important;
+  padding: 10px 14px !important;
+  font-size: var(--text-sm) !important;
+  color: var(--color-white) !important;
+  outline: none !important;
+  transition: border-color var(--transition-fast) !important;
+}
+
+.sync-restore-input:focus {
+  border-color: var(--color-accent) !important;
+}
+
+.sync-restore-submit-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-border);
+  color: var(--color-white);
+  padding: 0 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sync-restore-submit-btn:active {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(0.96);
+}
+
+.sync-restore-submit-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Status Notifications */
+.sync-status-msg {
+  display: flex;
+  align-items: center;
+  font-size: var(--text-xs);
+  margin-top: 4px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  animation: fade-in 0.2s ease-out;
+}
+
+.sync-status-msg.success {
+  background: rgba(52, 199, 89, 0.1);
+  color: var(--color-green);
+}
+
+.sync-status-msg.error {
+  background: rgba(255, 45, 85, 0.1);
+  color: var(--color-pink);
+}
+
+.sync-status-msg.info {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-white);
+}
+
+/* Sync Modal Sizing & Scrolling clearance */
+.sync-modal-content {
+  background: rgba(18, 18, 22, 0.96) !important;
+  backdrop-filter: blur(28px) !important;
+  -webkit-backdrop-filter: blur(28px) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: none !important;
+  border-radius: 28px 28px 0 0 !important;
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 -12px 48px rgba(0, 0, 0, 0.8) !important;
+}
+
+.sync-modal-body {
+  padding-bottom: calc(var(--safe-bottom) + 36px) !important;
+  overflow-y: auto !important;
+}
+

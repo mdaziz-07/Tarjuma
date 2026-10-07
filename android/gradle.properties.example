@@ -1,0 +1,8 @@
+# Project-wide Gradle settings.
+org.gradle.jvmargs=-Xmx1536m
+android.useAndroidX=true
+
+# SECURITY: Release signing credentials
+# In production, specify your keystore passwords here or via environment variables
+RELEASE_STORE_PASSWORD=
+RELEASE_KEY_PASSWORD=

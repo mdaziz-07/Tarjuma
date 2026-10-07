@@ -1,0 +1,478 @@
+/* ═══════════════════════════════════════════════════════
+   Daily Tadabbur (Audio Reflection) — Card Styles
+   Liquid Glass UI + Extended Length & Width
+   Clean dark luxury aesthetic matching visionOS / iOS glassmorphism.
+   ═══════════════════════════════════════════════════════ */
+
+.daily-tadabbur-section {
+  /* Extended width beyond standard padding */
+  margin: clamp(8px, 1.8vh, 16px) -10px clamp(16px, 2.5vh, 24px);
+  padding: 0;
+  width: calc(100% + 20px);
+  box-sizing: border-box;
+  position: relative;
+  z-index: 5;
+}
+
+.tadabbur-section .daily-tadabbur-card,
+.daily-tadabbur-card {
+  position: relative;
+  width: calc(100% + 16px);
+  margin-left: -8px;
+  margin-right: -8px;
+  box-sizing: border-box;
+  border-radius: 28px;
+  /* Increased length (vertical) & width (horizontal) padding */
+  padding: clamp(22px, 4.8vw, 30px) clamp(20px, 4.8vw, 28px);
+
+  /* True Liquid Glass Material */
+  background: rgba(20, 20, 26, 0.72) !important;
+  backdrop-filter: blur(34px) saturate(220%) !important;
+  -webkit-backdrop-filter: blur(34px) saturate(220%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+
+  /* 3D Liquid Specular Refraction & Deep Ambient Elevation */
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    inset 0 1.5px 0.5px rgba(255, 255, 255, 0.35),
+    inset 0 -1px 0.5px rgba(0, 0, 0, 0.4) !important;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  contain: paint;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.daily-tadabbur-card:hover {
+  border-color: rgba(255, 255, 255, 0.26) !important;
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(255, 255, 255, 0.18),
+    inset 0 2px 1px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 0.5px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Subtle diagonal liquid glass reflection sheen */
+.daily-tadabbur-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.14) 0%,
+      rgba(255, 255, 255, 0.03) 42%,
+      transparent 58%,
+      rgba(255, 255, 255, 0.05) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Meniscus top light ray */
+.daily-tadabbur-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.45) 30%,
+      rgba(255, 255, 255, 0.45) 70%,
+      transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Card Header ── */
+.tadabbur-card-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: clamp(14px, 2.5vh, 18px);
+}
+
+.tadabbur-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tadabbur-card-title {
+  font-size: clamp(12px, 2.8vw, 13px);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+}
+
+.tadabbur-date {
+  font-size: clamp(12px, 2.9vw, 13.5px);
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 500;
+}
+
+.tadabbur-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Theme pill — subtle dark luxury */
+.tadabbur-theme-pill {
+  font-size: clamp(11px, 2.7vw, 12px);
+  font-weight: 600;
+  padding: 5px clamp(12px, 2.8vw, 16px);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* ── Surah Reference Bar ── */
+.tadabbur-surah-ref {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(8px, 1.8vh, 12px) clamp(12px, 3.2vw, 18px);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 2px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: clamp(12px, 2.2vh, 16px);
+}
+
+.tadabbur-surah-name {
+  font-size: clamp(13.5px, 3.3vw, 15.5px);
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.tadabbur-surah-name .arabic-name {
+  font-family: var(--font-arabic);
+  color: rgba(255, 255, 255, 0.75);
+  margin-left: 6px;
+}
+
+.tadabbur-ayah-tag {
+  font-size: clamp(12px, 2.8vw, 13px);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 3px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ── Arabic Verse Typography (Larger & Enhanced Liquid Well) ── */
+.tadabbur-arabic-block {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: clamp(16px, 2.6vh, 22px) clamp(12px, 3.5vw, 18px);
+  margin-bottom: clamp(14px, 2.4vh, 18px);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 20px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 4px 18px rgba(0, 0, 0, 0.25);
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tadabbur-arabic-text {
+  font-family: var(--font-arabic, 'Amiri Quran', 'Scheherazade New', serif);
+  font-size: clamp(24px, 5.8vw, 32px);
+  line-height: clamp(2.1, 4.8vw, 2.4);
+  color: #ffffff;
+  margin: 0;
+  word-spacing: 3px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Language Switcher Tabs ── */
+.tadabbur-lang-tabs {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto clamp(12px, 2.2vh, 16px);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  padding: 4px;
+  width: fit-content;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tadabbur-lang-tab {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.65);
+  padding: 6px clamp(14px, 3.2vw, 20px);
+  border-radius: 9999px;
+  font-size: clamp(12px, 2.9vw, 13px);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.tadabbur-lang-tab.active {
+  background: #ffffff;
+  color: #000000;
+  font-weight: 700;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Translation Text (Generous Size & Elegant Spacing) ── */
+.tadabbur-translation-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: clamp(15px, 3.6vw, 17px);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.94);
+  margin: 0 0 clamp(16px, 2.5vh, 22px);
+  padding: 0 8px;
+  font-weight: 400;
+}
+
+.tadabbur-translation-text.urdu {
+  font-size: clamp(16px, 4.0vw, 18.5px);
+  line-height: 1.9;
+  font-family: var(--font-arabic, 'Amiri Quran', serif);
+}
+
+/* ── Tadabbur Reflection Callout (Liquid Glass Box) ── */
+.tadabbur-insight-callout {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: clamp(14px, 2.4vh, 18px) clamp(16px, 3.6vw, 20px);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 4px 20px rgba(0, 0, 0, 0.25);
+  margin-bottom: clamp(16px, 2.5vh, 22px);
+}
+
+.tadabbur-insight-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tadabbur-insight-title {
+  font-size: clamp(11px, 2.6vw, 12px);
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.65);
+  text-transform: uppercase;
+}
+
+.tadabbur-insight-msg {
+  font-size: clamp(13.5px, 3.2vw, 15.5px);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.92);
+  font-style: italic;
+  margin: 0;
+}
+
+/* ── Audio Recitation Bar (Liquid Glass Pill) ── */
+.tadabbur-audio-bar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 3vw, 16px);
+  padding: clamp(12px, 2.2vh, 16px) clamp(16px, 3.5vw, 20px);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 4px 18px rgba(0, 0, 0, 0.25);
+  margin-bottom: clamp(16px, 2.5vh, 22px);
+}
+
+/* Circular Solid White Play Button with Black Icon */
+.tadabbur-audio-play-btn {
+  width: clamp(40px, 9.5vw, 46px);
+  height: clamp(40px, 9.5vw, 46px);
+  border-radius: 50%;
+  background: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.tadabbur-audio-play-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+.tadabbur-audio-play-btn:active {
+  transform: scale(0.95);
+}
+
+.tadabbur-audio-play-btn.playing {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* Audio Track Info & Slider */
+.tadabbur-audio-track-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tadabbur-track-labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.tadabbur-audio-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: clamp(12px, 2.8vw, 13.5px);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tadabbur-volume-icon {
+  color: rgba(255, 255, 255, 0.75);
+  flex-shrink: 0;
+}
+
+.tadabbur-audio-timer {
+  font-size: clamp(11.5px, 2.7vw, 12.5px);
+  color: rgba(255, 255, 255, 0.6);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.tadabbur-progress-bar {
+  width: 100%;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.tadabbur-progress-fill {
+  height: 100%;
+  background: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  transition: width 0.1s linear;
+}
+
+/* ── Footer Actions Row (Responsive Flex Layout) ── */
+.tadabbur-footer-actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(10px, 2.5vw, 16px);
+}
+
+/* Full Surah Button (Liquid Glass Dark Pill) */
+.tadabbur-full-surah-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  padding: 12px clamp(14px, 2.6vw, 20px);
+  border-radius: 9999px;
+  font-size: clamp(12.5px, 2.9vw, 14px);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  min-width: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.tadabbur-full-surah-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.26);
+  transform: translateY(-1px);
+}
+
+.tadabbur-full-surah-btn:active {
+  transform: translateY(0);
+}
+
+/* Share & Story Button (Liquid Glass Light Pill with High Contrast Text) */
+.tadabbur-share-story-btn {
+  flex: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #ffffff;
+  border: none;
+  color: #000000;
+  padding: 12px clamp(16px, 3.2vw, 22px);
+  border-radius: 9999px;
+  font-size: clamp(12.5px, 2.9vw, 14px);
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.tadabbur-share-story-btn:hover {
+  opacity: 0.94;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+}
+
+.tadabbur-share-story-btn:active {
+  transform: translateY(0);
+}
+
+/* Ultra-compact screen adjustments (e.g. iPhone SE / <= 360px width) */
+@media (max-width: 360px) {
+  .daily-tadabbur-card {
+    padding: 16px 14px;
+    border-radius: 20px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .tadabbur-footer-actions {
+    gap: 6px;
+  }
+}

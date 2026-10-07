@@ -1,0 +1,477 @@
+/* =========================================================
+   TAB BAR — LIQUID GLASS
+   ========================================================= */
+
+.tab-bar.glass-surface {
+  position: fixed;
+
+  bottom: calc(var(--space-sm, 12px) + var(--safe-bottom, 0px));
+
+  left: var(--tab-bar-margin, 20px);
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+
+  width: calc(100% - (var(--tab-bar-margin, 20px) * 2));
+
+  max-width: 420px;
+
+  height: var(--tab-bar-height, 72px);
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+
+  padding: 0 6px;
+
+  border-radius: 9999px;
+
+  /*
+   * IMPORTANT:
+   * This is the actual Liquid Glass base.
+   */
+  background:
+    linear-gradient(180deg,
+      rgba(255, 255, 255, 0.115) 0%,
+      rgba(255, 255, 255, 0.065) 45%,
+      rgba(255, 255, 255, 0.045) 100%);
+
+  /*
+   * Real glass blur.
+   */
+  -webkit-backdrop-filter:
+    blur(24px) saturate(180%) brightness(108%);
+
+  backdrop-filter:
+    blur(24px) saturate(180%) brightness(108%);
+
+  /*
+   * Thin glass edge.
+   */
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  /*
+   * Layered Liquid Glass shadow.
+   */
+  box-shadow:
+    0 0 0 0.5px rgba(255, 255, 255, 0.08),
+    0 4px 10px rgba(0, 0, 0, 0.20),
+    0 12px 30px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.20),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.045);
+
+  overflow: hidden;
+
+  z-index: 90;
+
+  isolation: isolate;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  /*
+   * Contain repaints to this layer alone — prevents cascade on low-end GPUs
+   */
+  contain: paint;
+
+  /*
+   * Buttery smooth 2D transition: no transform interpolation or matrix decomposition.
+   * Completely eliminates 3D flip distortion.
+   */
+  transition:
+    left 280ms cubic-bezier(0.25, 1, 0.5, 1),
+    width 280ms cubic-bezier(0.25, 1, 0.5, 1),
+    max-width 280ms cubic-bezier(0.25, 1, 0.5, 1),
+    height 280ms cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 240ms ease;
+
+  will-change: width, height;
+}
+
+
+/* =========================================================
+   TOP GLASS REFLECTION
+   ========================================================= */
+
+.tab-bar-glass-highlight {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 0;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(180deg,
+      rgba(255, 255, 255, 0.105) 0%,
+      rgba(255, 255, 255, 0.025) 32%,
+      rgba(255, 255, 255, 0) 65%);
+
+  opacity: 0.95;
+}
+
+
+/* Very subtle inner edge */
+
+.tab-bar.glass-surface::after {
+  content: '';
+
+  position: absolute;
+
+  inset: 1px;
+
+  border-radius: inherit;
+
+  pointer-events: none;
+
+  z-index: 0;
+
+  box-shadow:
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.075),
+    inset 0 1px 3px rgba(255, 255, 255, 0.055);
+}
+
+
+/* =========================================================
+   DESKTOP CENTERING
+   ========================================================= */
+
+@media (min-width: 452px) {
+  .tab-bar.glass-surface {
+    left: calc(50% - 210px);
+  }
+}
+
+
+/* =========================================================
+   ACTIVE LIQUID GLASS PILL
+   ========================================================= */
+
+.tab-pill-indicator {
+  position: absolute;
+
+  top: 5px;
+  bottom: 5px;
+
+  left: 6px;
+
+  width: calc((100% - 12px) / 4);
+
+  border-radius: 9999px;
+
+  /*
+   * The active item in your screenshot has
+   * noticeably stronger glass than the outer bar.
+   */
+  background:
+    linear-gradient(180deg,
+      rgba(255, 255, 255, 0.185) 0%,
+      rgba(255, 255, 255, 0.105) 45%,
+      rgba(255, 255, 255, 0.075) 100%);
+
+  -webkit-backdrop-filter:
+    blur(18px) saturate(190%);
+
+  backdrop-filter:
+    blur(18px) saturate(190%);
+
+  border: 1px solid rgba(255, 255, 255, 0.17);
+
+  box-shadow:
+    0 2px 7px rgba(0, 0, 0, 0.20),
+    0 0 0 0.5px rgba(255, 255, 255, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.23),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.045);
+
+  pointer-events: none;
+
+  z-index: 1;
+
+  opacity: 1;
+
+  transition:
+    transform 280ms cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 160ms ease;
+
+  will-change: transform;
+}
+
+
+/*
+ * Subtle reflection across the active pill.
+ */
+
+.tab-pill-indicator::after {
+  content: '';
+
+  position: absolute;
+
+  top: 1px;
+  left: 7px;
+  right: 7px;
+
+  height: 45%;
+
+  border-radius: 9999px;
+
+  background:
+    linear-gradient(180deg,
+      rgba(255, 255, 255, 0.13),
+      rgba(255, 255, 255, 0));
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TAB ITEMS
+   ========================================================= */
+
+.tab-item {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 2px;
+
+  padding: 0;
+
+  border: 0;
+  outline: none;
+
+  background: transparent;
+
+  border-radius: 9999px;
+
+  color: rgba(255, 255, 255, 0.52);
+
+  cursor: pointer;
+
+  touch-action: manipulation;
+
+  -webkit-tap-highlight-color: transparent;
+
+  user-select: none;
+
+  transition:
+    color 180ms ease,
+    opacity 140ms ease;
+}
+
+
+/* =========================================================
+   TAB ICON
+   ========================================================= */
+
+.tab-icon-wrapper {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+
+  transition:
+    filter 200ms ease,
+    opacity 180ms ease;
+}
+
+
+.tab-item svg,
+.tab-item .tab-icon-svg {
+  transition:
+    filter 200ms ease,
+    opacity 180ms ease;
+}
+
+
+/* =========================================================
+   ACTIVE TAB
+   ========================================================= */
+
+.tab-item.active {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+
+.tab-item.active .tab-icon-wrapper {
+  filter:
+    drop-shadow(0 0 6px rgba(255, 255, 255, 0.28));
+}
+
+
+.tab-item.active svg,
+.tab-item.active .tab-icon-svg {
+  filter:
+    drop-shadow(0 0 6px rgba(255, 255, 255, 0.28));
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.tab-label {
+  font-size: 0.625rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.01em;
+
+  line-height: 1;
+
+  color: inherit;
+
+  white-space: nowrap;
+
+  transition:
+    opacity 160ms ease;
+}
+
+
+.tab-item:not(.active) .tab-label {
+  opacity: 0.82;
+}
+
+
+.tab-item.active .tab-label {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   TOUCH FEEDBACK
+   ========================================================= */
+
+.tab-item:active {
+  opacity: 0.78;
+}
+
+
+/* =========================================================
+   COLLAPSED FAB
+   ========================================================= */
+
+.tab-fab-overlay {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+  outline: none;
+
+  border-radius: 50%;
+
+  color: rgba(255, 255, 255, 0.96);
+
+  background: transparent;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  z-index: 5;
+
+  transition:
+    opacity 200ms ease;
+}
+
+
+.tab-fab-overlay::before {
+  content: '';
+
+  position: absolute;
+
+  inset: 1px;
+
+  border-radius: inherit;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  pointer-events: none;
+}
+
+
+.tab-fab-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  filter:
+    drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+}
+
+
+/* =========================================================
+   COLLAPSED STATE
+   ========================================================= */
+
+.tab-bar.nav-collapsed {
+  width: 50px;
+  max-width: 50px;
+
+  height: 50px;
+
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+
+  padding: 0;
+
+  border-radius: 9999px;
+}
+
+
+.tab-bar.nav-collapsed .tab-item {
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+
+.tab-bar.nav-collapsed .tab-pill-indicator {
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+
+.tab-bar.nav-collapsed .tab-bar-glass-highlight {
+  opacity: 0.8;
+}
+
+
+.tab-bar.nav-collapsed .tab-fab-overlay {
+  opacity: 1;
+
+  pointer-events: auto;
+}
+
+
+.tab-bar.nav-collapsed .tab-fab-overlay:active {
+  opacity: 0.82;
+}
+

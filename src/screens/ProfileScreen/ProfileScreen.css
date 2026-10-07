@@ -1,0 +1,519 @@
+/* ========================================================================
+   ProfileScreen.css — Liquid Glass Black & White UI
+   Strict PRD guidelines: zero color accents, white opacity system
+   ======================================================================== */
+
+.profile-screen {
+  padding: var(--space-lg);
+  padding-bottom: 90px;
+  animation: fade-in-up 0.3s ease-out;
+  overflow-y: auto;
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* ── [A] Header & Navigation ── */
+.profile-page-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.profile-back-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.profile-back-btn:active {
+  background: rgba(255, 255, 255, 0.18);
+  transform: scale(0.92);
+}
+
+.profile-anon-identity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+  animation: fade-in-up 0.35s ease-out;
+}
+
+.profile-large-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--glass-glow);
+}
+
+/* Make User Silhouette Larger to Fit the Circle */
+.large-avatar-icon {
+  width: 46px !important;
+  height: 46px !important;
+  opacity: 0.95;
+}
+
+/* Preferred Name Edit Button */
+.profile-listener-label-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.95);
+  transition: all var(--transition-fast);
+}
+
+.profile-listener-label-btn:active {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(0.96);
+}
+
+.profile-listener-label {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.prof-edit-icon-small {
+  opacity: 0.55;
+  color: #ffffff;
+}
+
+.prof-name-input-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.45);
+  padding-bottom: 2px;
+  max-width: 200px;
+}
+
+.prof-name-input {
+  background: none;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  width: 130px;
+}
+
+.prof-name-done-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* ── [B & C] Snapchat-style Streak Card ── */
+.snap-streak-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  animation: fade-in-up 0.4s cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+.snap-streak-card.streak-at-risk {
+  animation: streak-breath-glow 3s infinite ease-in-out, fade-in-up 0.4s cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+@keyframes streak-breath-glow {
+  0% {
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.12), 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.snap-card-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-lg);
+  gap: var(--space-lg); /* Generous gap to separate text and progress indicator */
+}
+
+.snap-card-left {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0; /* Prevents text overflow into circular progress */
+}
+
+/* Sizing matching PRD: 52pt for streak numbers */
+.snap-metric-val {
+  font-family: var(--font-ui);
+  font-size: 3.25rem; /* ~52pt */
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.snap-metric-val-row {
+  display: flex;
+  align-items: baseline;
+}
+
+.snap-metric-val-row .snap-metric-val {
+  font-size: 2.6rem; /* ~42pt */
+}
+
+.snap-metric-unit {
+  font-size: 1.25rem; /* ~20pt */
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.6);
+  margin-left: 2px;
+}
+
+.snap-metric-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 6px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+/* 7-Day Consistency Dot Row */
+.snap-dots-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 14px;
+  flex-wrap: nowrap;
+}
+
+.snap-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 700;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.snap-dot.completed {
+  background: #ffffff;
+  color: #000000;
+  border: 1.5px solid #ffffff;
+}
+
+.snap-dot.empty {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.4);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+}
+
+.snap-dot-text {
+  transform: translateY(-0.5px);
+  line-height: 1;
+}
+
+/* Horizontal Track inside Hours Card */
+.snap-horizontal-track {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  width: 100%;
+  max-width: 180px;
+  margin-top: 16px;
+  overflow: hidden;
+}
+
+.snap-horizontal-fill {
+  height: 100%;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: width 1s ease-out;
+}
+
+/* Right Side elements */
+.snap-card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  width: 64px;
+  flex-shrink: 0;
+}
+
+.snap-streak-icon-wrap {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.snap-streak-glow-icon {
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+}
+
+.profile-progress-arc-wrapper {
+  position: relative;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-progress-arc-svg {
+  display: block;
+  overflow: visible;
+}
+
+/* SVG Text Centered Alignment Fix */
+.profile-progress-arc-svg text {
+  dominant-baseline: central;
+  text-anchor: middle;
+}
+
+/* Card Bottom hairline footer */
+.snap-card-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px var(--space-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.snap-footer-left,
+.snap-footer-right {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 500;
+}
+
+/* ── [D & E] Badge Collections ── */
+.profile-badge-collection-section {
+  margin-top: 28px;
+  animation: fade-in-up 0.5s ease-out both;
+}
+
+.profile-badge-grid-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 14px;
+}
+
+.pb-grid-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.pb-grid-subtitle {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 500;
+}
+
+/* Flex Grid with 4 Columns & Gutter Gaps */
+.profile-badge-flex-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* Standard Badge Tile Design - Rounded corner square card */
+.prof-badge-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1; /* Rounded corner square */
+  border-radius: 18px; /* Prominent rounded corners square */
+  padding: var(--space-xs);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Standard Unlocked Tile */
+.prof-badge-tile.unlocked {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.prof-badge-tile.unlocked:active {
+  transform: scale(0.95);
+}
+
+/* Standard Locked Tile (Recessed) */
+.prof-badge-tile.locked {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.25);
+  box-shadow: none;
+}
+
+/* Whole Hour Badge Elevated Ring effect */
+.prof-badge-tile.elevated.unlocked {
+  box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.8), 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Special Badge (365 days / 100 hrs): Spans 2 grid columns */
+.prof-badge-tile.special {
+  grid-column: span 2;
+  aspect-ratio: auto;
+  min-height: 84px;
+}
+
+.prof-badge-tile.special.unlocked {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.15);
+}
+
+/* Inner elements inside standard tile */
+.prof-badge-icon-holder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+  color: inherit;
+}
+
+.badge-svg-icon {
+  width: 28px;
+  height: 28px;
+}
+
+/* Special size icons */
+.prof-badge-tile.special .badge-svg-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.prof-badge-lock {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  background: #000000;
+  border-radius: 50%;
+  padding: 2.5px;
+  width: 14px;
+  height: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* 🔥 Fire Emoji badge styling */
+.badge-emoji-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.badge-emoji {
+  font-size: 26px; /* High-definition scale */
+  line-height: 1;
+}
+
+.badge-emoji-container.special .badge-emoji {
+  font-size: 32px;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+.badge-star-ring {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-size: 11px;
+}
+
+.prof-badge-tile-name {
+  font-size: 10px; /* ~11pt */
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.15;
+  color: inherit;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.prof-badge-tile.unlocked .prof-badge-tile-name {
+  color: #ffffff;
+}
+
+.prof-badge-tile.locked .prof-badge-tile-name {
+  color: rgba(255, 255, 255, 0.30);
+}
+
+.prof-badge-tile-sub {
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 2px;
+}

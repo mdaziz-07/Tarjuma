@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Tarjuma</string>
+    <string name="title_activity_main">Tarjuma</string>
+    <string name="package_name">com.tarjuma.app</string>
+    <string name="custom_url_scheme">com.tarjuma.app</string>
+</resources>

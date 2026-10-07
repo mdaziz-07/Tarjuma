@@ -1,0 +1,136 @@
+.scholar-picker-screen {
+  animation: fade-in var(--transition-base) ease-out;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+.scholar-picker-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+}
+
+.scholar-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.scholar-card-item {
+  transition: all var(--transition-base);
+  overflow: hidden;
+}
+
+.scholar-card-item.active-scholar {
+  border: 1px solid rgba(255, 122, 0, 0.3);
+  box-shadow: 0 0 16px rgba(255, 122, 0, 0.08);
+}
+
+.scholar-card-main {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  cursor: pointer;
+  padding: var(--space-xs) 0;
+}
+
+.scholar-card-main:active {
+  opacity: 0.7;
+}
+
+.scholar-card-photo {
+  flex-shrink: 0;
+}
+
+.scholar-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.scholar-card-name-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.scholar-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.scholar-card-expand {
+  flex-shrink: 0;
+  padding: var(--space-sm);
+}
+
+/* Expanded content */
+.scholar-card-expanded {
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-mid-grey);
+  margin-top: var(--space-md);
+  animation: fade-in var(--transition-base) ease-out;
+}
+
+.scholar-bio {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+}
+
+.scholar-surah-list {
+  margin-bottom: var(--space-lg);
+}
+
+.scholar-surah-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.scholar-surah-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: var(--color-mid-grey);
+  border-radius: 10px;
+  font-size: var(--text-xs);
+}
+
+.chip-num {
+  font-weight: 700;
+  color: var(--color-orange);
+}
+
+.chip-name {
+  color: var(--color-white);
+  font-weight: 500;
+}
+
+.scholar-surah-chip.more {
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+.scholar-select-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: var(--glass-radius-sm);
+  background: var(--color-orange);
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: var(--text-base);
+  text-align: center;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 16px rgba(255, 122, 0, 0.3);
+}
+
+.scholar-select-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(255, 122, 0, 0.4);
+}

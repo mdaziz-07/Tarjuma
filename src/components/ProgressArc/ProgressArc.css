@@ -1,0 +1,494 @@
+.progress-arc-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: var(--space-lg) 0 var(--space-md);
+  width: 100%;
+}
+
+.progress-arc-wrapper {
+  position: relative;
+  width: 300px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+}
+
+.progress-arc-svg {
+  display: block;
+  height: 180px;
+  width: 300px;
+  overflow: visible;
+}
+
+.progress-arc-fill {
+  animation: arc-draw 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes arc-draw {
+  from {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+  }
+}
+
+.progress-arc-center {
+  position: absolute;
+  top: 85px; /* Shifted down for better centering inside the semicircle arch */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 200px;
+}
+
+.progress-arc-label {
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 2px;
+}
+
+.progress-arc-value {
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-white);
+}
+
+.progress-arc-unit {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-muted);
+  margin-left: 1px;
+}
+
+.progress-arc-goal {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  margin-top: 4px;
+}
+
+.progress-arc-encourage {
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  margin-top: var(--space-lg);
+  text-align: center;
+}
+
+/* Weekly Habit Tracker Row */
+.goals-habit-tracker {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 280px;
+  margin-top: var(--space-lg);
+  padding: 0 var(--space-sm);
+  gap: var(--space-xs);
+}
+
+.habit-day {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-muted);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all var(--transition-base);
+  box-shadow: var(--glass-glow);
+}
+
+.habit-day.today {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: var(--color-white);
+}
+
+.habit-day.completed {
+  background: var(--color-white);
+  color: var(--color-black);
+  border-color: var(--color-white);
+  font-weight: 800;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+.habit-day.future {
+  opacity: 0.35;
+}
+
+/* Recitation Stats Card */
+.recitation-stats-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 320px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--glass-radius-md);
+  padding: var(--space-md) var(--space-xs);
+  margin-bottom: var(--space-lg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--glass-glow), 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+}
+
+.stat-icon {
+  color: var(--color-muted);
+  margin-bottom: var(--space-xs);
+  opacity: 0.8;
+}
+
+.stat-icon.flame {
+  color: #ff9f0a; /* Premium gold-orange streak flame color */
+  filter: drop-shadow(0 0 6px rgba(255, 159, 10, 0.4));
+  opacity: 1;
+}
+
+.stat-label {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-top: 2px;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Interactive Stats Card Item ── */
+.stat-item.clickable {
+  cursor: pointer;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.stat-item.clickable:active {
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+
+/* ── Streak Badge Collections (Copied from ProfileScreen.css) ── */
+.profile-badge-collection-section {
+  margin-top: 28px;
+  animation: fade-in-up 0.5s ease-out both;
+}
+
+.profile-badge-grid-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 14px;
+}
+
+.pb-grid-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.pb-grid-subtitle {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 500;
+}
+
+/* Flex Grid with 4 Columns & Gutter Gaps */
+.profile-badge-flex-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* Standard Badge Tile Design - Rounded corner square card */
+.prof-badge-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1; /* Rounded corner square */
+  border-radius: 18px; /* Prominent rounded corners square */
+  padding: var(--space-xs);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Standard Unlocked Tile */
+.prof-badge-tile.unlocked {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.prof-badge-tile.unlocked:active {
+  transform: scale(0.95);
+}
+
+/* Standard Locked Tile (Recessed) */
+.prof-badge-tile.locked {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.25);
+  box-shadow: none;
+}
+
+/* Special Badge (365 days): Spans 2 grid columns */
+.prof-badge-tile.special {
+  grid-column: span 2;
+  aspect-ratio: auto;
+  min-height: 84px;
+}
+
+.prof-badge-tile.special.unlocked {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.15);
+}
+
+/* Inner elements inside standard tile */
+.prof-badge-icon-holder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+  color: inherit;
+}
+
+.badge-svg-icon {
+  width: 28px;
+  height: 28px;
+}
+
+/* Special size icons */
+.prof-badge-tile.special .badge-svg-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.prof-badge-lock {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  background: #000000;
+  border-radius: 50%;
+  padding: 2.5px;
+  width: 14px;
+  height: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* 🔥 Fire Emoji badge styling */
+.badge-emoji-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.badge-emoji {
+  font-size: 26px; /* High-definition scale */
+  line-height: 1;
+}
+
+.badge-emoji-container.special .badge-emoji {
+  font-size: 32px;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+}
+
+.badge-star-ring {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-size: 11px;
+}
+
+.prof-badge-tile-name {
+  font-size: 10px; /* ~11pt */
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.15;
+  color: inherit;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.prof-badge-tile.unlocked .prof-badge-tile-name {
+  color: #ffffff;
+}
+
+.prof-badge-tile.locked .prof-badge-tile-name {
+  color: rgba(255, 255, 255, 0.30);
+}
+
+.prof-badge-tile-sub {
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 2px;
+}
+
+/* ── Badge Modal Tabs ── */
+.badge-modal-tabs {
+  display: flex;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.badge-tab-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition-fast) ease;
+}
+
+.badge-tab-btn:hover {
+  color: #ffffff;
+}
+
+.badge-tab-btn.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjust grid container for modal height & scrolling */
+.profile-badge-flex-grid {
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 4px;
+  scrollbar-width: thin;
+}
+
+/* Custom scrollbar for badges grid */
+.profile-badge-flex-grid::-webkit-scrollbar {
+  width: 4px;
+}
+.profile-badge-flex-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+.profile-badge-flex-grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+
+/* Year Streak Professional Gold Badge Styling */
+.prof-badge-tile.year-streak.unlocked {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.12) 0%, rgba(255, 140, 0, 0.12) 100%) !important;
+  border: 1.5px solid rgba(255, 215, 0, 0.35) !important;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  animation: year-gold-glow 4s infinite alternate ease-in-out;
+}
+
+@keyframes year-gold-glow {
+  0% {
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.12);
+  }
+  100% {
+    box-shadow: 0 0 28px rgba(255, 215, 0, 0.35);
+  }
+}
+
+/* ── Premium Stats Summary Card inside Modal ── */
+.modal-stats-summary-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 12px 16px;
+  margin: 4px 0 16px 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.modal-stat-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-stat-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.modal-stat-val {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.modal-stat-lbl {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.modal-stat-divider {
+  width: 1px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.08);
+}
+

@@ -1,0 +1,77 @@
+================================================================================
+                               PRIVACY POLICY
+                             TARJUMA QURAN APP
+================================================================================
+Last Updated: August 21, 2026
+Contact: tarjumaapp@proton.me
+Website: https://tarjumaapp.vercel.app
+
+1. OUR PRIVACY COMMITMENT
+--------------------------
+At Tarjuma, we believe that your spiritual journey and engagement with the Holy 
+Quran should remain completely private, peaceful, and secure. We do NOT sell your 
+data, we do NOT display third-party advertisements, and we do NOT track your 
+personal identity across the web.
+
+This Privacy Policy explains how information is handled when you use the Tarjuma 
+mobile application and web app.
+
+2. INFORMATION WE COLLECT & HOW WE USE IT
+------------------------------------------
+A. On-Device Local Storage (Primary Storage):
+Tarjuma is built with a local-first architecture. The vast majority of your data 
+resides exclusively on your device using localStorage and IndexedDB. This includes:
+- Playback State: Last played Surah, Para, Ayah position, playback speed, and audio mode.
+- Preferences: Selected reciter/scholar, background ambient sound selection, volume settings.
+- Favorites & Playlists: Bookmarked Surahs/Paras and custom playlists you create.
+- Goals & Streaks: Daily recitation goal target (e.g., 20 minutes) and current streak records.
+- Offline Downloads: Audio files downloaded for offline playback stored securely in your browser/device IndexedDB.
+
+B. Optional Cloud Synchronization (Data Sync & Backup):
+- You are not required to create an account or provide an email address to use Tarjuma.
+- If you use the "Data Sync & Backup" feature, the app generates a randomized, anonymous Sync Key (e.g., TRJM-A1B2-C3D4).
+- This Sync Key stores an encrypted backup of your playlists, favorite bookmarks, and streak data on our secure cloud server (Supabase). No name, email, phone number, or personal identity is linked to this key.
+
+C. Minimal, Anonymous Telemetry:
+To ensure app stability and monitor server health, the App may log non-personal metrics:
+- Anonymous device identifier (random UUID).
+- App version, operating system type (Android / iOS / Web).
+- Aggregated listening duration (e.g., total minutes listened) and feature usage statistics.
+- Crash reports to help us resolve software bugs.
+- This data cannot be used to identify or trace you individually.
+
+3. THIRD-PARTY AUDIO PROVIDERS & SERVICES
+------------------------------------------
+To stream high-quality Quranic recitations and store backups, the App interacts with:
+- Public Quran Audio CDNs (MP3Quran.net, QuranicAudio.com): Direct HTTP/HTTPS audio streaming requests to deliver recitation files. These CDNs receive standard network request metadata (IP address and user agent) necessary to deliver audio packets.
+- Supabase: Cloud database infrastructure used for anonymous data backup synchronization and feedback delivery, protected by enterprise-grade encryption in transit and at rest.
+- Proton Mail: Secure, privacy-first email infrastructure for receiving user-initiated bug reports and feature suggestions sent to tarjumaapp@proton.me.
+
+4. COOKIES AND TRACKING TECHNOLOGIES
+-------------------------------------
+Tarjuma does NOT use advertising cookies, commercial tracking pixels, or third-party behavioral analytics SDKs (such as Facebook Pixel or Google Ads). 
+
+5. DATA RETENTION AND YOUR RIGHTS (DATA DELETION)
+-------------------------------------------------
+You have complete control over your data:
+- Delete Downloads: You can remove any downloaded Surah or Para at any time from the Downloads tab in the Library screen or directly inside the Player screen.
+- Clear All Local Data: In the Settings screen under "Data Sync & Backup", you can tap "Clear Cache" or reset app preferences to instantly erase all locally stored history, bookmarks, and offline files.
+- Cloud Backup Deletion: If you wish to delete any cloud-synced data associated with your Sync Key, simply email your Sync Key to tarjumaapp@proton.me with the subject "Delete My Sync Data", and we will permanently delete it from the cloud database.
+
+6. CHILDREN'S PRIVACY
+----------------------
+Tarjuma is suitable for users of all ages. We do not knowingly collect or solicit any personally identifiable information from children under the age of 13.
+
+7. SECURITY OF YOUR DATA
+-------------------------
+We implement robust technical and organizational security measures, including HTTPS/TLS encryption for all data transmitted between your device and backend servers.
+
+8. CHANGES TO THIS PRIVACY POLICY
+----------------------------------
+We may periodically update this Privacy Policy to reflect improvements to the App. Any updates will be published with an updated "Last Updated" date. We encourage you to review this policy from time to time.
+
+9. CONTACT US
+--------------
+If you have any questions, suggestions, or concerns regarding your privacy while using Tarjuma, please reach out to us:
+Email: tarjumaapp@proton.me
+================================================================================
