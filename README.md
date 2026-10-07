@@ -69,26 +69,6 @@ Featuring world-renowned reciters, ambient background soundscapes, daily Tadabbu
 
 ---
 
-## 🔒 Security Architecture
-
-Tarjuma adheres to strict security standards to ensure no backend secrets or private keys are ever bundled or exposed:
-
-- **Decoupled Client Variables:** Only public environment variables prefixed with `VITE_` are exposed to the client bundle. Private API keys and storage secrets remain server-side.
-- **Protected Environment Files:** Local `.env` files, keystores, Android signing configs, and database seed scripts are strictly ignored in `.gitignore`.
-- **Database Row Level Security (RLS):** All Supabase tables are secured with authenticated user-scoped access policies.
-- **Android Signing Isolation:** Release keystore passwords and aliases are decoupled from version control via `android/gradle.properties` (with template provided in `gradle.properties.example`).
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- **Node.js**: `v18.x` or later (LTS recommended)
-- **npm**: `v9.x` or later
-- **Android Studio**: Ladybug / Meerkat (for building native Android APKs)
-- **Java**: JDK 17 or JDK 21
-
 ## 📄 License
 
 This project is licensed under the **GNU General Public License v3.0** (GPL-3.0).  
